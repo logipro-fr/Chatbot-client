@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isChatbotVisible = false;
     let isFirstOpen = true;
     let firstMessage = true;
+    let baseUrl ="http://172.17.0.1:11080"; 
     let conversationId;
 
     function toggleChatbot() {
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateResponse(message) {
         if (firstMessage == true){
             //makeConversation
-            return fetch('http://172.17.0.1:11080/api/v1/conversations/Make', {
+            return fetch(baseUrl+'/api/v1/conversations/Make', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }else{
             //continueConversation
-            return fetch('http://172.17.0.1:11002/api/v1/Conversations/continueConversation', {
+            return fetch(baseUrl+'/api/v1/Conversations/continueConversation', {
                 method: 'POST',
                 headers: {
                     
