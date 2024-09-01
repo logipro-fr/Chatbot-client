@@ -1,0 +1,23 @@
+services:
+    node:
+        image: "${COMPOSE_PROJECT_NAME}-node"
+        build:
+            context: .
+            dockerfile: docker/node/Dockerfile
+        user: "1000:1000"
+        ports:
+            - "3000:3000"
+        volumes:
+            - "./:/usr/src/app"
+        networks:
+            - ${COMPOSE_PROJECT_NAME}-network
+
+networks:
+    chatbot-client-js-network:
+        name: "${COMPOSE_PROJECT_NAME}-network"
+        driver: bridge
+        enable_ipv6: true
+        ipam:
+            config:
+                - subnet: fdff:1:2f::/112
+                  gateway: fdff:1:2f::1

@@ -1,0 +1,8 @@
+# Ignore everything
+/*
+# Except /src and /tests folders
+!/src
+!/tests
+# But do not touch html nor css
+/src/**/*.css
+/src/**/*.html

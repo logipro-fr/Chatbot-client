@@ -1,0 +1,19 @@
+#!/bin/bash
+
+function main() {
+    docker_build
+    install
+}
+
+function docker_build() {
+    (
+        cd docker || exit 
+        docker compose build
+    )
+}
+
+function install() {
+    bin/npm install
+}
+
+main

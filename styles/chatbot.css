@@ -2,10 +2,9 @@
     --primary-color: #bf0f43;
     --primary-hover-color: #a70d3b;
     --background-bot-color: #bf0f4362;
-    --background-user-color: #5e5e5e23; 
+    --background-user-color: #5e5e5e23;
     --secondary-color: #e1e1e1;
 }
-
 
 /* General styles */
 body {
@@ -44,7 +43,6 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-
 }
 
 #chatbot.hidden {
@@ -117,7 +115,6 @@ body {
     max-width: 300px;
 }
 
-
 .message {
     display: flex;
     align-items: center;
@@ -172,6 +169,10 @@ body {
     word-wrap: break-word; /* Assure que le texte se casse correctement */
 }
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
