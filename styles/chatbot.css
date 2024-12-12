@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #bf0f43;
+    --primary-hover-color: #a70d3b;
+    --background-bot-color: #bf0f4362;
+    --background-user-color: #5e5e5e23;
+    --secondary-color: #e1e1e1;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Button to toggle the chatbot widget */
+#toggleButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#toggleButton img {
+    width: 50px; /* Ajustez la taille de l'image selon vos besoins */
+    height: 50px; /* Assurez-vous que la hauteur correspond également */
+    transition: transform 0.2s ease; /* Pour un effet de survol sympa */
+}
+#toggleButton:hover img {
+    transform: scale(1.2); /* Agrandit l'image de 20% au survol */
+}
+
+/* Chatbot widget styles */
+#chatbot {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#chatbot.hidden {
+    display: none;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-header h2 {
+    margin: 0;
+}
+
+#closeButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#closeButton:hover {
+    opacity: 0.7;
+}
+
+.chatbox {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    border-bottom: 1px solid #ddd;
+    max-height: 300px;
+    height: 300px;
+    word-wrap: break-word;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+#userInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#sendButton {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#sendButton:hover {
+    background-color: var(--primary-hover-color);
+    max-width: 300px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    max-width: 90%;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Compatibilité avec les anciens navigateurs */
+    overflow-wrap: break-word; /* Nouveaux navigateurs */
+    word-break: break-word; /* Forcer la rupture des mots longs */
+    hyphens: auto; /* Ajouter des césures si nécessaire */
+}
+
+.user-message {
+    margin: 3px;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: right;
+    background-color: var(--background-user-color);
+    color: black;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px; /* Espacement entre l'horodatage et le texte */
+}
+
+.bot-message {
+    margin: 3px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: var(--background-bot-color);
+    color: black;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Espacement entre l'horodatage et le texte */
+}
+
+.timestamp {
+    font-size: 0.75em;
+    color: #999;
+    margin-right: 5px;
+    white-space: nowrap; /* Assure que l'horodatage ne se casse pas */
+    flex-shrink: 0; /* Empêche le rétrécissement de l'horodatage */
+}
+
+.message-text {
+    flex: 1; /* Prend l'espace restant pour le texte */
+    word-wrap: break-word; /* Assure que le texte se casse correctement */
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker compose run --volume "$(pwd):$(pwd)" --workdir "$(pwd)" node npm --no-update-notifier "$@"
+

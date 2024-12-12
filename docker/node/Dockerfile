@@ -1,0 +1,4 @@
+FROM node:lts-alpine
+
+WORKDIR /usr/src/app
+EXPOSE 3000

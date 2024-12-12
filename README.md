@@ -1,1 +1,64 @@
-To use this client, copy the HTML code at the end of your HTML page, import the JS file, import the CSS file, make your adjustments, and don't forget to change the link to your API to call your chatbot (feel free to use our API available on the 'Logipro' page under the 'Chatbot' repository).
+# chatbot-client-ts
+
+chatbot-client-ts is a typescript project using chatbot to display chatbot in an internet page.
+
+---
+
+# Install
+
+[ to do]
+
+# To Contribute to chatbot-client-ts
+
+## Requirements
+
+-   docker
+-   git
+
+## Install
+
+```console
+git clone git@gitlab.logipro.com:alban/chatbot-client-ts.git
+./install
+```
+
+## Build
+
+### Transpile
+
+```console
+bin/tsc
+```
+
+## Unit Test
+
+Test source files with TypeScript Jest:
+
+```console
+bin/npm run test
+```
+
+## Quality
+
+Code requirements:
+
+-   codecheck: `eslint:recommended` & `typescript-eslint:recommended`
+-   coverage: ~ 100% as a consequence of Test Developpement Driven practice
+
+Check code with ESLint:
+
+```console
+bin/npm run codecheck
+```
+
+Check format with Prettier:
+
+```console
+bin/npm run prettier
+```
+
+Check infection with Stryker Mutator:
+
+```console
+bin/npm run test:mutate
+```
